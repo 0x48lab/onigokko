@@ -1,4 +1,4 @@
-package com.hacklab.app.onigokko.onigokko
+package com.hacklab.onigokko
 
 import io.flutter.embedding.android.FlutterActivity
 

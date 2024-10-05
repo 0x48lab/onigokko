@@ -65,6 +65,6 @@ class DefaultFirebaseOptions {
     projectId: 'onigokko-16527',
     databaseURL: 'https://onigokko-16527-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'onigokko-16527.appspot.com',
-    iosBundleId: 'com.hacklab.app.onigokko.onigokko',
+    iosBundleId: 'com.com.hacklab.onigokko',
   );
 }
