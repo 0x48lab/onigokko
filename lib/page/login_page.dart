@@ -8,7 +8,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("鬼ごっこ", style: TextStyle(fontSize: 32,),),
+          Text("鬼ごっこ", style: TextStyle(fontSize: 32)),
           Padding(
             padding: const EdgeInsets.only(top: 22.0),
             child: Row(
@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
               children: [
               SizedBox(
                 width: 70,
-                  child: Text("部屋ID", style: TextStyle(fontSize: 12),)),
+                  child: Text("部屋ID", style: TextStyle(fontSize: 12))),
               SizedBox(
                 width: 227,
                 child: TextField(
@@ -24,7 +24,9 @@ class LoginPage extends StatelessWidget {
                   decoration: InputDecoration(
                   labelText: 'Enter your name',
                   border: OutlineInputBorder(),
-                ),),
+                ),
+
+                ),
               ),
             ],),
           ),
@@ -49,11 +51,22 @@ class LoginPage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top:33.0),
-            child: OutlinedButton(onPressed: ()=>{}, child: Text("参加する")),
+            child: OutlinedButton(
+                onPressed: ()=>{},
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                  backgroundColor: Colors.white30
+                ),
+                child: Text("参加する")
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 12.0),
-            child: TextButton(onPressed: ()=>{}, child: Text("新しい部屋を作る")),
+            child: TextButton(
+                onPressed: ()=>{},
+                style: TextButton.styleFrom(foregroundColor: Colors.black),
+                child: Text("新しい部屋を作る")),
           ),
         ],
       ),
