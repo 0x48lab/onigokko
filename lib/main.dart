@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onigokko/page/login_page.dart';
+import 'package:onigokko/page/join_page.dart';
 import 'package:onigokko/route/router.dart';
 
 void main() {
