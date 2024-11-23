@@ -2,14 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginPage extends StatelessWidget {
+class SignUpPage extends StatelessWidget{
+  const SignUpPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("ログイン", style: TextStyle(fontSize: 32)),
+          Text("アカウント登録", style: TextStyle(fontSize: 32)),
+          Padding(
+            padding: const EdgeInsets.only(top: 22.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                    width: 70,
+                    child: Text("ユーザー名", style: TextStyle(fontSize: 12))),
+                SizedBox(
+                  width: 227,
+                  child: TextField(
+                    controller: TextEditingController(),
+                    decoration: InputDecoration(
+                      labelText: 'Enter your username',
+                      border: OutlineInputBorder(),
+                    ),
+
+                  ),
+                ),
+              ],),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 22.0),
             child: Row(
@@ -25,9 +47,7 @@ class LoginPage extends StatelessWidget {
                     decoration: InputDecoration(
                       labelText: 'Enter your e-mail',
                       border: OutlineInputBorder(),
-                    ),
-
-                  ),
+                    ),),
                 ),
               ],),
           ),
@@ -44,7 +64,7 @@ class LoginPage extends StatelessWidget {
                   child: TextField(
                     controller: TextEditingController(),
                     decoration: InputDecoration(
-                      labelText: 'Enter your passward',
+                      labelText: 'Enter your password',
                       border: OutlineInputBorder(),
                     ),),
                 ),
@@ -61,27 +81,19 @@ class LoginPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                     backgroundColor: Colors.white30
                 ),
-                child: Text("ログイン")
+                child: Text("登録")
             ),
           ),
-          Padding(
+          /** Padding(
             padding: const EdgeInsets.only(top: 12.0),
             child: TextButton(
-                onPressed: ()=>{
-                  context.go("/sign_up")
-                },
+                onPressed: ()=>{},
                 style: TextButton.styleFrom(foregroundColor: Colors.black),
                 child: Text("新規アカウント登録")),
-          ),
+          ), **/
         ],
       ),
     );
   }
+  
 }
-
-
-
-
-
-
-
