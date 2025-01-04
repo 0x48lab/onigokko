@@ -18,63 +18,75 @@ class SignUpPage extends ConsumerWidget {
     final passwordController = TextEditingController();
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 12.0),
-            child: TextButton(
-                onPressed: ()=>{
-                  context.go("/login")
-                },
-                style: TextButton.styleFrom(foregroundColor: Colors.black),
-                child: Text("[: 戻る :]")),
-          ),
-          const Text("アカウント登録", style: TextStyle(fontSize: 32)),
-          _buildTextField("ユーザー名", "Enter your username", nameController),
-          _buildTextField("メールアドレス", "Enter your e-mail", emailController),
-          _buildTextField("パスワード", "Enter your password", passwordController,
-              obscureText: true),
-          Padding(
-            padding: const EdgeInsets.only(top: 33.0),
-            child: OutlinedButton(
-              onPressed: state.isLoading
-                  ? null
-                  : () async {
-                final name = nameController.text.trim();
-                final email = emailController.text.trim();
-                final password = passwordController.text.trim();
-
-                final success = await viewModel.register(email, password, name);
-
-                if (success) {
-                  context.go("/join"); // 登録成功時にページ遷移
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(state.errorMessage ?? '登録に失敗しました。'),
-                    ),
-                  );
-                }
-              },
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.black,
-                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                backgroundColor: Colors.white30,
-              ),
-              child: state.isLoading
-                  ? const CircularProgressIndicator(color: Colors.black)
-                  : const Text("登録"),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: BackButton(
+                  onPressed: () => {context.go("/login")},
+                  color: Colors.black,
+                ),
             ),
-          ),
-
-        ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("アカウント登録", style: TextStyle(fontSize: 32)),
+                  _buildTextField("ユーザー名", "Enter your username", nameController),
+                  _buildTextField("メールアドレス", "Enter your e-mail", emailController),
+                  _buildTextField(
+                      "パスワード", "Enter your password", passwordController,
+                      obscureText: true),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 33.0),
+                    child: OutlinedButton(
+                      onPressed: state.isLoading
+                          ? null
+                          : () async {
+                              final name = nameController.text.trim();
+                              final email = emailController.text.trim();
+                              final password = passwordController.text.trim();
+              
+                              final success =
+                                  await viewModel.register(email, password, name);
+              
+                              if (success) {
+                                context.go("/join"); // 登録成功時にページ遷移
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content:
+                                        Text(state.errorMessage ?? '登録に失敗しました。'),
+                                  ),
+                                );
+                              }
+                            },
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero),
+                        backgroundColor: Colors.white30,
+                      ),
+                      child: state.isLoading
+                          ? const CircularProgressIndicator(color: Colors.black)
+                          : const Text("登録"),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
 
   /// テキストフィールドのUI構築
-  Widget _buildTextField(String label, String hint, TextEditingController controller,
+  Widget _buildTextField(
+      String label, String hint, TextEditingController controller,
       {bool obscureText = false}) {
     return Padding(
       padding: const EdgeInsets.only(top: 22.0),
@@ -82,7 +94,8 @@ class SignUpPage extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-              width: 70, child: Text(label, style: const TextStyle(fontSize: 12))),
+              width: 70,
+              child: Text(label, style: const TextStyle(fontSize: 12))),
           SizedBox(
             width: 227,
             child: TextField(
