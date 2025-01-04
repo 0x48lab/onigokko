@@ -21,6 +21,15 @@ class SignUpPage extends ConsumerWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 12.0),
+            child: TextButton(
+                onPressed: ()=>{
+                  context.go("/login")
+                },
+                style: TextButton.styleFrom(foregroundColor: Colors.black),
+                child: Text("[: 戻る :]")),
+          ),
           const Text("アカウント登録", style: TextStyle(fontSize: 32)),
           _buildTextField("ユーザー名", "Enter your username", nameController),
           _buildTextField("メールアドレス", "Enter your e-mail", emailController),
@@ -58,6 +67,7 @@ class SignUpPage extends ConsumerWidget {
                   : const Text("登録"),
             ),
           ),
+
         ],
       ),
     );

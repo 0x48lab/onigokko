@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
                   child: TextField(
                     controller: TextEditingController(),
                     decoration: InputDecoration(
-                      labelText: 'Enter your passward',
+                      labelText: 'Enter your password',
                       border: OutlineInputBorder(),
                     ),),
                 ),
