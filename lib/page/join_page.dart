@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 class JoinPage extends StatelessWidget {
   @override
@@ -52,7 +53,9 @@ class JoinPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top:33.0),
             child: OutlinedButton(
-                onPressed: ()=>{},
+                onPressed: ()=>{
+                  context.go("/map_page")
+                },
                 style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.black,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
@@ -64,7 +67,9 @@ class JoinPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 12.0),
             child: TextButton(
-                onPressed: ()=>{},
+                onPressed: ()=>{
+                  context.go("/map_page")
+                },
                 style: TextButton.styleFrom(foregroundColor: Colors.black),
                 child: Text("新しい部屋を作る")),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:onigokko/page/join_page.dart';
 import 'package:onigokko/page/login_page.dart';
+import 'package:onigokko/page/map_page.dart';
 import 'package:onigokko/page/sign_up_page.dart';
 
 final goRouter = GoRouter(
@@ -28,6 +29,12 @@ final goRouter = GoRouter(
           return MaterialPage(key: state.pageKey, child: SignUpPage());
         }
     ),
-
+    GoRoute(
+        path: "/map_page",
+        name: "map_page",
+        pageBuilder: (context, state) {
+          return MaterialPage(key: state.pageKey, child: MapPage());
+        }
+    ),
   ]
 );
