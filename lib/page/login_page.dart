@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
                   child: TextField(
                     controller: TextEditingController(),
                     decoration: InputDecoration(
-                      labelText: 'Enter your e-mail',
+                      labelText: 'Emailを入力してください',
                       border: OutlineInputBorder(),
                     ),
 
@@ -43,9 +43,11 @@ class LoginPage extends StatelessWidget {
                   width: 227,
                   child: TextField(
                     controller: TextEditingController(),
+                    obscureText: true,  // 入力テキストを非表示にする
                     decoration: InputDecoration(
-                      labelText: 'Enter your password',
+                      labelText: 'パスワードを入力してください',
                       border: OutlineInputBorder(),
+                      suffixIcon: Icon(Icons.visibility_off),  // アイコン（視覚的なヒント）
                     ),),
                 ),
               ],),
