@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:onigokko/service/provider.dart';
+import 'package:onigokko/viewmodel/register_page_viewmodel.dart';
 
 class SignUpPage extends ConsumerWidget {
   const SignUpPage({super.key});
