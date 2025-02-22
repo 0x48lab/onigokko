@@ -2,6 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod/riverpod.dart';
 
+final registerProvider =
+StateNotifierProvider<RegisterPageViewmodel, RegisterState>(
+      (ref) => RegisterPageViewmodel(),
+);
+
 class RegisterPageViewmodel extends StateNotifier<RegisterState> {
   RegisterPageViewmodel()
       : super(RegisterState()); // 初期状態を設定

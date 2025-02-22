@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:onigokko/viewmodel/login_page_viewmodel.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends ConsumerWidget {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(loginProvider);
+    final viewModel = ref.read(loginProvider.notifier);
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -21,7 +28,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   width: 227,
                   child: TextField(
-                    controller: TextEditingController(),
+                    controller: emailController,
                     decoration: InputDecoration(
                       labelText: 'Emailを入力してください',
                       border: OutlineInputBorder(),
@@ -42,7 +49,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   width: 227,
                   child: TextField(
-                    controller: TextEditingController(),
+                    controller: passwordController,
                     obscureText: true,  // 入力テキストを非表示にする
                     decoration: InputDecoration(
                       labelText: 'パスワードを入力してください',
@@ -55,8 +62,17 @@ class LoginPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top:33.0),
             child: OutlinedButton(
-                onPressed: ()=>{
-                  context.go("/join")
+                onPressed: () async {
+                  String email = emailController.text;
+                  String password = passwordController.text;
+                  viewModel.login(email, password).then((ret){
+                    if(ret) {
+                      viewModel.showToast("ログインしました");
+                      context.go("/join");
+                    }else{
+                      viewModel.showError("ログインできませんでした");
+                    }
+                  });
                 },
                 style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.black,
