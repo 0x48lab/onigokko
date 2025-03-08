@@ -1398,10 +1398,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: d121da9ef7e2ff4cab7666e76c5a3e0915ae08c3
   BoringSSL-GRPC: ca6a8e5d04812fce8ffd6437810c2d46f925eaeb
-  cloud_firestore: 09c286c21eb8c954f0d803812c99f36784ba628c
+  cloud_firestore: 5cb927f1a8c9d748d6fdbf16c6b267956cb82c53
   Firebase: 98e6bf5278170668a7983e12971a66b2cd57fc8c
-  firebase_auth: 51b560599fa3d93f494f32b94583e00fb5190f58
-  firebase_core: 085320ddfaacb80d1a96eac3a87857afcc150db1
+  firebase_auth: 0c77e299a8f2d1c74d1b1f6b78b3d4d802c19f47
+  firebase_core: 2bedc3136ec7c7b8561c6123ed0239387b53f2af
   FirebaseAppCheckInterop: ea21450529cf0ebd132788dd8916a0269abc684f
   FirebaseAuth: 2a198b8cdbbbd457f08d74df7040feb0a0e7777a
   FirebaseAuthInterop: 47c09558af5d1b31f16fb352387c72d4804f4a24
@@ -1412,10 +1412,10 @@ SPEC CHECKSUMS:
   FirebaseFirestoreInternal: ad9b9ee2d3d430c8f31333a69b3b6737a7206232
   FirebaseSharedSwift: a4e5dfca3e210633bb3a3dfb94176c019211948b
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
-  geolocator_apple: 1560c3c875af2a412242c7a923e15d0d401966ff
+  fluttertoast: 21eecd6935e7064cc1fcb733a4c5a428f3f24f0f
+  geolocator_apple: 9bcea1918ff7f0062d98345d238ae12718acfbc1
   Google-Maps-iOS-Utils: 66d6de12be1ce6d3742a54661e7a79cb317a9321
-  google_maps_flutter_ios: 0291eb2aa252298a769b04d075e4a9d747ff7264
+  google_maps_flutter_ios: e31555a04d1986ab130f2b9f24b6cdc861acc6d3
   GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
   GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
   "gRPC-C++": 2fa52b3141e7789a28a737f251e0c45b4cb20a87
