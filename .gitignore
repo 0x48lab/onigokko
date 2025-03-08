@@ -57,3 +57,4 @@ doc/api/
 .flutter-plugins
 .flutter-plugins-dependencies
 /.dart_tool/
+ios/Runner/Config.xcconfig
