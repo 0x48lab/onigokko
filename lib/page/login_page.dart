@@ -13,7 +13,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   List<String> emailHistory = []; // 過去の入力履歴
-  bool _isPasswordVisible = false; 
+  bool _isPasswordVisible = false;
 
   @override
   void initState() {
